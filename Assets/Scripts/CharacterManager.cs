@@ -5,19 +5,18 @@ public class CharacterManager : MonoBehaviour
     private static CharacterManager _instance;
     public static CharacterManager Instance
     {
-        get
+        get 
         {
             if(_instance == null)
             {
-                _instance  = new GameObject("CharacterManger").AddComponent<CharacterManager>();
+                _instance = new GameObject("CharacterManager").AddComponent<CharacterManager>();
             }
             return _instance;
         }
     }
 
     public Player _player;
-
-    public Player player
+    public Player Player
     {
         get { return _player; }
         set { _player = value; }
@@ -25,7 +24,7 @@ public class CharacterManager : MonoBehaviour
 
     private void Awake()
     {
-        if(_instance == null)
+        if(_instance != null)
         {
             _instance = this;
             DontDestroyOnLoad(gameObject);
