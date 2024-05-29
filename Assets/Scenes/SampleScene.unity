@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  condition: {fileID: 0}
 --- !u!1001 &298238695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -468,6 +469,7 @@ GameObject:
   - component: {fileID: 700717886}
   - component: {fileID: 700717888}
   - component: {fileID: 700717887}
+  - component: {fileID: 700717889}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -507,7 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.003921569, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -532,6 +534,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700717885}
   m_CullTransparentMesh: 1
+--- !u!114 &700717889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700717885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b45d22755a87648a2ff67561434225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nowValue: 100
+  maxValue: 100
+  addValue: 5
+  subtractValue: 5
+  uiBar: {fileID: 700717887}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

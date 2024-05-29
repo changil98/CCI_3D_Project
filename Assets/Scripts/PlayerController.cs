@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         CameraLook();
     }
 
-    void Move()
+    public void Move()
     {
         Vector3 dir = transform.forward * movementInput.y + transform.right * movementInput.x;
         dir *= moveSpeed;
@@ -100,6 +100,16 @@ public class PlayerController : MonoBehaviour
             {
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    public bool IsMove()
+    {
+        if (movementInput == Vector2.zero)
+        {
+            return true;
         }
 
         return false;
