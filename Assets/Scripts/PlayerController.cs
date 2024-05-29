@@ -114,4 +114,12 @@ public class PlayerController : MonoBehaviour
 
         return false;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "JumpFloor")
+        {
+            _rigidbody.AddForce(transform.up * 200f, ForceMode.Impulse);
+        }
+    }
 }
