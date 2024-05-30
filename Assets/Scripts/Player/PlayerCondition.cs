@@ -9,7 +9,11 @@ public class PlayerCondition : MonoBehaviour
     PlayerController controller;
     Interaction interaction;
 
+    float healing = 10f;
+    float jumping = 5;
+
     Condition health { get { return uiCondition.health; } }
+    Condition stamina {  get { return uiCondition.stamina; } }
 
     private void Awake()
     {
@@ -19,13 +23,21 @@ public class PlayerCondition : MonoBehaviour
 
     void Update()
     {
-        if (controller.IsMove() == true)
+        if (controller.Jump() == true)
         {
-            health.Add(health.addValue * Time.deltaTime);
+            stamina.Subtract(jumping);
+        }
+        else if (controller.IsMove() == true)
+        {
+            stamina.Add(stamina.addValue * Time.deltaTime);
+        }
+        else if (stamina.nowValue <= 0f)
+        {
+            health.Subtract(health.subtractValue * Time.deltaTime);
         }
         else
         {
-            health.Subtract(health.subtractValue * Time.deltaTime);
+            stamina.Subtract(stamina.subtractValue * Time.deltaTime);
         }
     }
 
@@ -40,8 +52,7 @@ public class PlayerCondition : MonoBehaviour
 
     IEnumerator Healing()
     {
-        float healing = 10f;
-        controller.moveSpeed = 6f;
+        controller.moveSpeed = 7f;
         health.nowValue += healing;
         Debug.Log("체력이 회복되고 이동속도가 5초 동안 증가합니다.");
         yield return new WaitForSecondsRealtime(5f);

@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float jumpPower;
     public LayerMask groundLayerMask;
 
+    float jumpKey = 0;
+
     private Rigidbody _rigidbody;
 
     private void Awake()
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
         CameraLook();
     }
 
-    public void Move()
+    void Move()
     {
         Vector3 dir = transform.forward * movementInput.y + transform.right * movementInput.x;
         dir *= moveSpeed;
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
         if(context.phase == InputActionPhase.Started && IsGrounded())
         {
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            jumpKey = 1f;
         }
     }
 
@@ -98,6 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
             {
+                Debug.Log("มกวม");
                 return true;
             }
         }
@@ -109,6 +113,18 @@ public class PlayerController : MonoBehaviour
     {
         if (movementInput == Vector2.zero)
         {
+            return true;
+        }
+        
+        return false;
+    }
+
+
+    public bool Jump()
+    {
+        if (jumpKey == 1f)
+        {
+            jumpKey = 0f;
             return true;
         }
 
