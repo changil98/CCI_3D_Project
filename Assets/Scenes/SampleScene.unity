@@ -675,7 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowValue: 100
   maxValue: 100
-  addValue: 0
+  addValue: 5
   subtractValue: 5
   uiBar: {fileID: 700717887}
 --- !u!1 &705507993
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   nowValue: 100
   maxValue: 100
   addValue: 10
-  subtractValue: 5
+  subtractValue: 3
   uiBar: {fileID: 2131400654}
 --- !u!114 &2131400654
 MonoBehaviour:
