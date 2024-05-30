@@ -70,12 +70,12 @@ public class Interaction : MonoBehaviour
         {
             if(InteractGameObject.gameObject.tag == "Food")
             {
+                IsEat = true;
+                condition.Eat();
                 Destroy(InteractGameObject.gameObject);
                 InteractGameObject = null;
                 interactable = null;
                 prompText.gameObject.SetActive(false);
-                IsEat = true;
-                condition.Eat();
             }
             else
             {

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\uC6B8\uD0C0\uB9AC"
   description: "\uBD80\uC2E4\uD558\uB2E4..."
+  type: 1
   dropPrefab:
   - {fileID: 1025681519537117646, guid: aa99a810914c5b84b9bc5d51f95dd05c, type: 3}
   - {fileID: 487885705732334654, guid: 5172505cfbc25c644ad2ab70b9c6271a, type: 3}
