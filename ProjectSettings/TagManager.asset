@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - JumpFloor
+  - Tree
+  - Food
   layers:
   - Default
   - TransparentFX
